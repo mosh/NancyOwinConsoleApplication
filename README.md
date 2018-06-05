@@ -1,3 +1,5 @@
 # NancyOwinConsoleApplication
 
-Owin Nancy comsole application.
+Owin Nancy console application.
+
+Starting point for a restful api.
