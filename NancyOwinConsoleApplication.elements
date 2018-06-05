@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProductVersion>3.5</ProductVersion>
+    <RootNamespace>NancyOwinConsoleApplication</RootNamespace>
+    <ProjectGuid>{00A6C63A-0E3D-4A42-A7A6-728295166D71}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>NancyOwinConsoleApplication</AssemblyName>
+    <AllowGlobals>False</AllowGlobals>
+    <AllowLegacyWith>False</AllowLegacyWith>
+    <AllowLegacyOutParams>False</AllowLegacyOutParams>
+    <AllowLegacyCreate>False</AllowLegacyCreate>
+    <AllowUnsafeCode>False</AllowUnsafeCode>
+    <ApplicationIcon>Properties\App.ico</ApplicationIcon>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <DefaultUses>RemObjects.Elements.RTL</DefaultUses>
+    <TargetFramework>.NETFramework4.6.2</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>False</Optimize>
+    <OutputPath>.\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <GeneratePDB>True</GeneratePDB>
+    <GenerateMDB>True</GenerateMDB>
+    <EnableAsserts>True</EnableAsserts>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <CaptureConsoleOutput>False</CaptureConsoleOutput>
+    <StartMode>Project</StartMode>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <CpuType>anycpu</CpuType>
+    <RuntimeVersion>v25</RuntimeVersion>
+    <XmlDoc>False</XmlDoc>
+    <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+    <WarnOnCaseMismatch>True</WarnOnCaseMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release</OutputPath>
+    <GeneratePDB>False</GeneratePDB>
+    <GenerateMDB>False</GenerateMDB>
+    <EnableAsserts>False</EnableAsserts>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <CaptureConsoleOutput>False</CaptureConsoleOutput>
+    <StartMode>Project</StartMode>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <CpuType>anycpu</CpuType>
+    <RuntimeVersion>v25</RuntimeVersion>
+    <XmlDoc>False</XmlDoc>
+    <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+    <WarnOnCaseMismatch>True</WarnOnCaseMismatch>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Elements">
+      <Private>True</Private>
+    </Reference>
+    <NuGetReference Include="owin:*">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="nancy.owin:*">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="microsoft.owin.hosting:*">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="microsoft.owin.host.httplistener:*">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="microsoft.owin.diagnostics:*">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="microsoft.owin:*">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="autofac:*" />
+    <NuGetReference Include="Nancy.Bootstrappers.Autofac:*" />
+    <NuGetReference Include="Newtonsoft.Json:*">
+      <Private>True</Private>
+    </NuGetReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.pas" />
+    <Compile Include="Properties\AssemblyInfo.pas" />
+    <Content Include="Properties\App.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.pas" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
+    <Compile Include="Properties\Settings.Designer.pas" />
+    <Compile Include="Startup.pas" />
+    <Compile Include="HelloWorldModule.pas" />
+    <Compile Include="BootStrapper.pas" />
+    <Compile Include="JsonNetSerializer.pas" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
+</Project>
